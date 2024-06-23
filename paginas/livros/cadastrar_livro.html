@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/bootstrap/bootstrap.min.css">
+    <title>Cadastrar livros</title>
+</head>
+<body>
+    <a href="../../index.php">Voltar</a>
+    <form action="../../php/dbcadastro_livro.php" method="post" enctype="multipart/form-data">
+        <input type="text" name="nome_livro" placeholder="Título do Livro">
+        <br>
+        <input type="text" name="autor" placeholder="Autor">
+        <br>
+        <input type="text" name="editora" placeholder="Editora">
+        <br>
+        <input type="number" name="ano" placeholder="Ano">
+        <br>
+        <textarea name="sinopse" cols="21" rows="3" placeholder="Sinopse"></textarea>
+        <br>
+        <input type="number" name="quant" placeholder="Quantidade">
+        <br>
+        <input type="hidden" name="MAX_FILE_SIZE" value="99999999">
+        <br>
+        <input name="imagem" type="file">
+        <br>
+        <button>Enviar</button>
+    </form>
+</body>
+</html>

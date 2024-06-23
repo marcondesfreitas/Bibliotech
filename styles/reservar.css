@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+}
+#tudo{
+    display: flex;
+}
+#imagem{
+    width: 600px;
+    height: 500px;
+}
+#imagem img{
+    width: 400px;
+    height: 500px;
+    position: relative;
+    top: 5%;
+    left: 5%;
+    transition: 0.4s;
+}
+@media only screen and (max-width: 600px) {
+    #imagem img {
+        width: 200px;
+        height: 300px;
+    }
+  }
+#corpo{
+    position: relative;
+    left: 5%;
+    top: 10%;
+}
+#sinopse{
+    width: 70%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
