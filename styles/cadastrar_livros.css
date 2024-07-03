@@ -1,55 +1,90 @@
 body {
+    background-color: #f7f7f7;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+}
+
+.container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    display: flex;
+    flex-direction: column;
 }
 
-input[type="text"], input[type="number"], textarea {
-    width: calc(100% - 20px);
+input[type="text"],
+input[type="number"],
+textarea {
     padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
 }
 
-input[type="file"] {
-    margin: 10px 0;
+.custom-file-input {
+    display: none;
+}
+
+.custom-file-label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.custom-file-label:hover {
+    opacity: 0.8;
+}
+
+button,
+a.btn {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 button {
-    background-color: rgb(0, 94, 246);
-    color: white;
-    padding: 10px;
+    background-color: #007bff;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: calc(100% - 20px);
-    margin: 10px 0;
 }
 
-button:hover {
-    background-color: rgb(0, 75, 197);
-}
-
-a {
-    color: rgb(0, 94, 246);
-    text-decoration: none;
+a.btn {
+    background-color: #6c757d;
     display: inline-block;
-    margin-top: 10px;
 }
 
-a:hover {
-    text-decoration: underline;
+button:hover,
+a.btn:hover {
+    opacity: 0.8;
+}
+
+.capa_livro{
+    border-radius: 4px;
+    border: 2px solid #ddd;
+    margin-bottom: 2%;
+}
+
+.titulo-capa-livro{
+    color: #6c757d;
 }

@@ -5,9 +5,12 @@ if (!isset($_SESSION)) session_start();
 
 $id_usu = $_SESSION['UsuarioID'];
 
-$out_sql = "SELECT * FROM reservas where cod_reserva = 1 or cod_aluno = $id_usu";
-$querryy = mysqli_query($conexao, $out_sql);
-$lista = mysqli_fetch_array($querryy);
+$out_sql = "SELECT * FROM reservas WHERE cod_reserva = 1 OR cod_aluno = ?";
+$stmt = mysqli_prepare($conexao, $out_sql);
+mysqli_stmt_bind_param($stmt, 'i', $id_usu);
+mysqli_stmt_execute($stmt);
+$querryy = mysqli_stmt_get_result($stmt);
+
 $total = mysqli_num_rows($querryy);
 ?>
 <!DOCTYPE html>
@@ -33,28 +36,38 @@ $total = mysqli_num_rows($querryy);
         <?php
         if ($total > 0) {
             while ($valor = mysqli_fetch_array($querryy)) {
-                $sql = "SELECT * FROM livros where cod_livro = " . $valor['cod_livro'];
-                $query = mysqli_query($conexao, $sql);
+                // Use prepared statements for the second query as well
+                $sql = "SELECT * FROM livros WHERE cod_livro = ?";
+                $stmt2 = mysqli_prepare($conexao, $sql);
+                mysqli_stmt_bind_param($stmt2, 'i', $valor['cod_livro']);
+                mysqli_stmt_execute($stmt2);
+                $query = mysqli_stmt_get_result($stmt2);
                 $lista2 = mysqli_fetch_array($query);
 
+                if ($lista2) {
         ?>
-                <tr>
-                    <td style="font-weight: bold;"><?php echo $lista2['nome']; ?></td>
-                    <td><?php echo $valor['cod_reserva']; ?></td>
-                    <td><?php echo $valor['data_reserva']; ?></td>
-                    <td><?php
-                        if ($valor['estado_reserva'] == 1) {
-                            echo "Pedido de reserva em andamento";
-                        } else if ($valor['estado_reserva'] == 2) {
-                            echo "Reserva feita, aproveite o livro!";
-                        } else if ($valor['estado_reserva'] == 3) {
-                            echo "Livro atrasado, faça a devolução!";
-                        } else {
-                            echo "Livro entregue";
-                        }
-                        ?></td>
-                </tr>
+                    <tr>
+                        <td style="font-weight: bold;"><?php echo htmlspecialchars($lista2['nome']); ?></td>
+                        <td><?php echo htmlspecialchars($valor['cod_reserva']); ?></td>
+                        <td><?php echo htmlspecialchars($valor['data_reserva']); ?></td>
+                        <td><?php
+                            switch ($valor['estado_reserva']) {
+                                case 1:
+                                    echo "Pedido de reserva em andamento";
+                                    break;
+                                case 2:
+                                    echo "Reserva feita, aproveite o livro!";
+                                    break;
+                                case 3:
+                                    echo "Livro atrasado, faça a devolução!";
+                                    break;
+                                default:
+                                    echo "Livro entregue";
+                            }
+                            ?></td>
+                    </tr>
         <?php
+                }
             }
         }
         ?>

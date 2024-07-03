@@ -12,14 +12,14 @@ $tamanho = $_FILES['imagem']['size'];
 $tipo = $_FILES['imagem']['type'];
 $name = $_FILES['imagem']['name'];
 
-$sql= "INSERT INTO livros values(null, '$nome', '$autor', '$editora', '$ano', '$sinopse', '$quantidade')";
+$sql = "INSERT INTO livros values(null, '$nome', '$autor', '$editora', '$ano', '$sinopse', '$quantidade')";
 $query = mysqli_query($conexao, $sql);
 
 if (!isset($_SESSION)) session_start();
 
 $_SESSION['LivroNome'] = $nome;
 
-if ( $imagem != "none" ){
+if ($imagem != "none") {
     $fp = fopen($imagem, "rb");
     $conteudo = fread($fp, $tamanho);
     $conteudo = addslashes($conteudo);
@@ -34,7 +34,7 @@ if ( $imagem != "none" ){
 
     mysqli_query($conexao, $queryInsercao);
     echo 'Registro inserido com sucesso!';
-    if(mysqli_affected_rows($conexao) > 0)
+    if (mysqli_affected_rows($conexao) > 0)
         echo "
         <script>
             alert ('Livro Cadastrado');
@@ -43,8 +43,5 @@ if ( $imagem != "none" ){
         ";
     else
         print "Não foi possível salvar a imagem na base de dados.";
-}
-else
+} else
     print "Não foi possível carregar a imagem.";
-
-?>

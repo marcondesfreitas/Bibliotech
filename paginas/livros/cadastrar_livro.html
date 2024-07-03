@@ -7,31 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../../styles/cadastrar_livros.css">
-    <title>Cadastrar livros</title>
+    <title>Cadastrar Livros</title>
 </head>
 
 <body>
-    <form action="../../php/dbcadastro_livro.php" method="post" enctype="multipart/form-data">
-        <input type="text" name="nome_livro" placeholder="Título do Livro">
-        <br>
-        <input type="text" name="autor" placeholder="Autor">
-        <br>
-        <input type="text" name="editora" placeholder="Editora">
-        <br>
-        <input type="number" name="ano" placeholder="Ano">
-        <br>
-        <textarea name="sinopse" cols="21" rows="3" placeholder="Sinopse"></textarea>
-        <br>
-        <input type="number" name="quant" placeholder="Quantidade">
-        <br>
-        <input type="hidden" name="MAX_FILE_SIZE" value="99999999">
-        <br>
-        <input name="imagem" type="file">
-        <br>
-        <button>Enviar</button>
-        <a href="../../index.php">Voltar</a>
+    <div class="container">
+        <h1>Cadastrar Livros</h1>
+        <form action="../../php/dbcadastro_livro.php" method="post" enctype="multipart/form-data">
+            <input type="text" name="nome_livro" placeholder="Título do Livro" required>
+            <input type="text" name="autor" placeholder="Autor" required>
+            <input type="text" name="editora" placeholder="Editora" required>
+            <input type="number" name="ano" placeholder="Ano" required>
+            <textarea name="sinopse" cols="21" rows="3" placeholder="Sinopse" required></textarea>
+            <input type="number" name="quant" placeholder="Quantidade" required>
+            <div class="capa_livro">
+                <p class="titulo-capa-livro">CAPA DO LIVRO: </p>
+                <input type="hidden" name="MAX_FILE_SIZE" value="99999999">
+                <input name="imagem" type="file" placeholder="CAPA DO LIVRO" required>
+            </div>
 
-    </form>
+            <button type="submit">Enviar</button>
+            <a href="../../index.php" class="btn">Voltar</a>
+        </form>
+    </div>
 </body>
 
 </html>

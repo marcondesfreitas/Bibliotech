@@ -89,7 +89,8 @@ header {
     margin-left: 10px;
 }
 
-#abrir1, #abrir2 {
+#abrir1,
+#abrir2 {
     font-size: 24px;
     margin-left: 10px;
     cursor: pointer;
@@ -97,7 +98,8 @@ header {
     display: none;
 }
 
-#abrir1.active, #abrir2.active {
+#abrir1.active,
+#abrir2.active {
     display: block;
 }
 
@@ -187,7 +189,7 @@ header {
     transition: background-color 0.3s;
 }
 
-#acessar button a{
+#acessar button a {
     text-decoration: none;
     color: aliceblue;
 }
@@ -218,7 +220,8 @@ header {
         margin-top: 10px;
     }
 
-    #abrir1, #abrir2 {
+    #abrir1,
+    #abrir2 {
         display: block;
     }
 

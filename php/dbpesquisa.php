@@ -15,4 +15,3 @@ echo "
         window.location = '../index.php';
     </script>
 ";
-?>

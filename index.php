@@ -73,7 +73,8 @@
                     echo "<p class=menu>MENU</p>";
                     echo "<div id=j1><a id='j2' href=paginas/usuarios.php>Tabela Usuarios</a></div><hr>";
                     echo "<div id=j1><a id='j2' href=paginas/livros/cadastrar_livro.html>Cadastrar Livro</a></div><hr>";
-                    echo "<div id=j1><a id='j2' href=paginas/conta.php>Ver Registros</a></div><hr>";
+                    echo "<div id=j1><a id='j2' href=paginas/ver_reservas.php>Ver Reservas</a></div><hr>";
+                    echo "<div id=j1><a id='j2' href=paginas/listar_livros.php>Ver / editar Livros</a></div><hr>";
                     echo "<div id=j1><a id='j2' href=paginas/logout.php>Logout</a><br></div>";
                     echo "</div>";
                 } else if ($adm == 1) {

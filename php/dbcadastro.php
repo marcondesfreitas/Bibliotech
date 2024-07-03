@@ -11,7 +11,7 @@ $logado = null;
 $confir = "SELECT email FROM `usuario` where email = '$email' and ativo = 1";
 $query = mysqli_query($conexao, $confir);
 
-if(mysqli_num_rows($query) > 0){
+if (mysqli_num_rows($query) > 0) {
 	echo "
 		<script>
 			alert('Email já cadastrado');
@@ -22,7 +22,7 @@ if(mysqli_num_rows($query) > 0){
 }
 
 
-$sql= "INSERT INTO usuario values(null, '$nome', '$serie', '$email', sha1('$senha'), '$tel', 1, 1, now())";
+$sql = "INSERT INTO usuario values(null, '$nome', '$serie', '$email', sha1('$senha'), '$tel', 1, 1, now())";
 
 mysqli_query($conexao, $sql);
 echo "
@@ -31,6 +31,3 @@ echo "
 	window.location = '../paginas/Login/index.html';
 </script>
 ";
-
-?>
-
