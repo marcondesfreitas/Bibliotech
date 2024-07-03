@@ -1,19 +1,23 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
-body{
+
+body {
     height: 100vh;
     width: 100vw;
 }
-#tudo{
+
+#tudo {
     display: flex;
 }
-#imagem{
+
+#imagem {
     width: 600px;
     height: 500px;
 }
-#imagem img{
+
+#imagem img {
     width: 400px;
     height: 500px;
     position: relative;
@@ -21,21 +25,25 @@ body{
     left: 5%;
     transition: 0.4s;
 }
+
 @media only screen and (max-width: 600px) {
     #imagem img {
         width: 200px;
         height: 300px;
     }
-  }
-#corpo{
+}
+
+#corpo {
     position: relative;
     left: 5%;
     top: 10%;
 }
-#sinopse{
+
+#sinopse {
     width: 70%;
 }
-a{
+
+a {
     text-decoration: none;
     color: black;
 }

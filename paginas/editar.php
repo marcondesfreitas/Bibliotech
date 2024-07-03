@@ -3,23 +3,25 @@ include_once "../php/dbconnect.php";
 
 $url = substr($_SERVER['REQUEST_URI'], -3);
 $string = strval($url);
-if(substr($string, -2, 1) === "="){
-	$string = substr($_SERVER['REQUEST_URI'], -1);
-}else if(substr($string, -3, 1) === "="){
-	$string = substr($_SERVER['REQUEST_URI'], -2);
+if (substr($string, -2, 1) === "=") {
+    $string = substr($_SERVER['REQUEST_URI'], -1);
+} else if (substr($string, -3, 1) === "=") {
+    $string = substr($_SERVER['REQUEST_URI'], -2);
 }
-$sql = "SELECT * FROM `usuario` where id = ". $string;
+$sql = "SELECT * FROM `usuario` where id = " . $string;
 $query = mysqli_query($conexao, $sql);
 $lista = mysqli_fetch_array($query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <p>Clique em cima para alterar<br></p>
     <table border="1">
@@ -31,16 +33,16 @@ $lista = mysqli_fetch_array($query);
             <td>Id</td>
         </tr>
         <tr>
-            <td onclick="mudar('nome')"><?php echo $lista['nome'];?></td>
-            <td onclick="mudar('serie')"><?php echo $lista['serie'];?></td>
-            <td onclick="mudar('email')"><?php echo $lista['email'];?></td>
-            <td onclick="mudar('telefone')"><?php echo $lista['telefone'];?></td>
-            <td><?php echo $lista['id'];?></td>
+            <td onclick="mudar('nome')"><?php echo $lista['nome']; ?></td>
+            <td onclick="mudar('serie')"><?php echo $lista['serie']; ?></td>
+            <td onclick="mudar('email')"><?php echo $lista['email']; ?></td>
+            <td onclick="mudar('telefone')"><?php echo $lista['telefone']; ?></td>
+            <td><?php echo $lista['id']; ?></td>
         </tr>
     </table>
     <br>
     <div>
-        <form action="modificar.php?codigo=<?php echo $lista['id'];?>" method="post" name="form" id="form">
+        <form action="modificar.php?codigo=<?php echo $lista['id']; ?>" method="post" name="form" id="form">
             <input type="text" placeholder="Novo Nome" id="nome" name="nome" class="eita">
             <br>
             <select name="serie" id="serie" class="eita">
@@ -66,11 +68,12 @@ $lista = mysqli_fetch_array($query);
         </form>
     </div>
     <style>
-        .eita{
+        .eita {
             display: none;
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../scripts/mudar.js"></script>
 </body>
+
 </html>

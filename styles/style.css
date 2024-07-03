@@ -1,229 +1,228 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-*{
+* {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
-body{
+
+body {
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
-}
-header{
-    height: 15%;
-    width: 100%;
-    background-color: green;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f4f4;
     display: flex;
-    position: relative;
-    z-index: 2;
-}
-#logo{
-    height: 80%;
-    width: 20%;
-    position: relative;
-    top: 10%;
-    left: 10%;
-}
-#logo img{
-    height: 100%;
-    width: 80px;
-}
-#menu{
-    position: relative;
-    left: 6%;
-    top: 40%;
-}
-#menu ul{
-    display: flex;
-    list-style: none;
-}
-#menu ul li{
-    margin-left: 20%;
-}
-#menu ul li a{
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-}
-#login{
-    position: relative;
-    left: 57%;
-    top: 30%;
-}
-#perfil{
-    position: relative;
-    left: -5px;
-    height: 30px;
-    width: 30px;
-    top: -4px;
-}
-#func{
-    background-color: rgb(8, 97, 8);
-    display: none;
-    position: relative;
-    top: 10%;
-}
-.anime{
-    animation: name 1s;
-}
-@keyframes name{
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-#j1{
-    background-color: rgb(8, 97, 8);
-    transition: 1s;
-}
-#j1:hover{
-    background-color: rgb(0, 172, 0);
-}
-#j2{
-    background-color: rgb(8, 97, 8);
-    transition: 1s;
-}
-#j2:hover{
-    background-color: rgb(0, 172, 0);
-}
-#j3{
-    background-color: rgb(8, 97, 8);
-    transition: 1s;
-}
-#j3:hover{
-    background-color: rgb(0, 172, 0);
-}
-#func hr{
-    background-color: rgb(4, 80, 4);
-    height: 1px;
-    border: 0px;
-}
-#conta{
-    position: relative;
-    z-index: 4;
-    left: 45%;
-    display: flex;
-    top: 10%;
-}
-#abrir{
-    position: relative;
-    left: 10px;
-    top: 2px;
-}
-#stn{
-    height: 15px;
-    width: 15px;
-}
-#seta{
-    height: 10px;
-    width: 10px;
-    margin-right: 5px;
-}
-#login a{
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
+    flex-direction: column;
+    align-items: center;
 }
 
-#article{
-    width: 80%;
-    position: relative;
-    left: 20%;
+header {
+    width: 100%;
+    background-color: rgb(0, 94, 246);
     display: flex;
-    flex-wrap: wrap; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.bloco{
-    background-color: grey;
-    width: 300px;
-    height: 350px;
-    margin-top: 30px;
-    margin-left: 20px;
-    margin-bottom: 30px;
-    border-radius: 10px 10px 10px 10px;
-    box-shadow: rgb(34, 34, 34) 8px 8px;
-    transition: 1s;
+
+#logo {
+    display: flex;
+    align-items: center;
 }
-.bloco2{
-    background-color: rgb(114, 56, 56);
-    width: 300px;
-    height: 350px;
-    margin-top: 60px;
-    margin-left: 20px;
-    border-radius: 10px 10px 10px 10px;
-    box-shadow: rgb(34, 34, 34) 8px 8px;
-    transition: 1s;
+
+.imagem_logo {
+    width: 50px;
+    height: auto;
 }
-.bloco2 img{
-    filter: grayscale(100%);
+
+.pesquisa {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-#foto{
-    position: relative; 
-    top: 5%;
+
+.pesquisa input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+    flex-grow: 1;
+    border-radius: 20px;
+}
+
+.pesquisa button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+#login a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+#conta {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#perfil {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+#nome_usuario {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+#abrir1, #abrir2 {
+    font-size: 24px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: white;
+    display: none;
+}
+
+#abrir1.active, #abrir2.active {
+    display: block;
+}
+
+#func {
+    background-color: rgb(0, 57, 148);
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 250px;
+    right: 0;
+    top: 9.5%;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+}
+
+#func.active {
+    display: block;
+}
+
+#func a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    margin: 10px 0;
+}
+
+#func .menu {
     text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: white;
 }
-#foto img{
+
+#article {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.bloco {
+    background-color: white;
+    width: 300px;
+    height: 350px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.bloco:hover {
+    transform: translateY(-10px);
+}
+
+#foto {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#foto img {
     width: 140px;
     height: 200px;
 }
-#titulo{
-    position: relative;
+
+#titulo {
     text-align: center;
-    top: 8%;
+    margin-top: 20px;
     font-family: 'Noto Sans', sans-serif;
 }
-#acessar{
-    position: relative;
+
+#acessar {
     text-align: center;
-    top: 12%;
-}
-#acessar a{
-    text-decoration: none;
-    color: black;
+    margin-top: 20px;
 }
 
-.pesquisa{
-    color: black;
-    top: 30%;
-    left: 30%;
-    position: absolute;
-    background: #ffffff;
-    height: 20px;
-    width: 30%;
-    padding: 10px;
-    border-radius: 40px;
-    display: flex;
-    justify-content: space-between;
-    transition: 0.5s;
-}
-#button{
-    position: relative;
-    border: 0px; 
-    background-color: white; 
-    position: relative; 
-    left: 100%;
-    cursor: pointer;
-}
-.pesquisa:hover{
-    box-shadow: 0 0 9px 9px rgb(0, 217, 255);
-}
-.inpu{
-    background: none;
+#acessar button {
+    background-color: rgb(0, 94, 246);
+    color: white;
     border: none;
-    outline: none;
-    width: 100%;
-    opacity: 100%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
-.lupa{
-    width: 20px;
+#acessar button a{
+    text-decoration: none;
+    color: aliceblue;
 }
-.span{
-    color: black;
+
+#acessar button:hover {
+    background-color: rgb(0, 75, 197);
+}
+
+.span {
+    color: white;
     background-color: red;
-    top: 6%;
     text-align: center;
-    font-size: 30px;
-    position: relative;
+    font-size: 14px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .pesquisa {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #login {
+        margin-top: 10px;
+    }
+
+    #abrir1, #abrir2 {
+        display: block;
+    }
+
+    #func {
+        width: 100%;
+    }
 }
