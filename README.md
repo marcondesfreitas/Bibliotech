@@ -28,3 +28,5 @@ Abra o navegador e digite http://localhost/bibliotech/index.php.
 Credenciais do Administrador:
 E-mail: adm@gmail.com
 Senha: 123
+
+aproveite o sistema
